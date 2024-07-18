@@ -11,7 +11,7 @@ const Login = () => {
             headers : {
                 "Context-Type" : "application/json",
                 "Accept" : "application/json"},
-                body : JSON.stringify({id:id, pw:pw})
+            body : JSON.stringify({id:id, pw:pw})
         })
         .then(response => response.json())
         .then(map => {
@@ -25,7 +25,7 @@ const Login = () => {
             setId('');
             setPw('');
             alert('로그인 성공~!');
-            setLoginMember(true);
+            //setLoginMember(true);
         })
     }
     const 로그아웃버튼 = () => {

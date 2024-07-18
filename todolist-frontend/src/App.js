@@ -10,9 +10,10 @@ function App() {
   
   const [signUpView, setSignUpView] = useState(false);
   const [loginMember, setLoginMember] = useState(null);
+  const [todoList, setTodoList] = useState([]);
 
   return (
-    <LoginContext.Provider value={{loginMember, setLoginMember}} >
+    <LoginContext.Provider value={{loginMember, setLoginMember, todoList, setTodoList}} >
       <button onClick={()=> {setSignUpView(!signUpView)}}>
         {signUpView ? ("회원 가입 닫기") : ("회원 가입 열기")}
       </button>

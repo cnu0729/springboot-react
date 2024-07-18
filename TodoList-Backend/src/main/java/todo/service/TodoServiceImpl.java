@@ -7,10 +7,11 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
 import todo.dto.Todo;
 import todo.dto.TodoMember;
 import todo.mapper.TodoMapper;
-
+@Slf4j
 @Service
 public class TodoServiceImpl implements TodoService{
 	@Autowired
@@ -38,6 +39,7 @@ public class TodoServiceImpl implements TodoService{
 			List<Todo> todoList = mapper.selectTodoList(loginMember.getTodoMemberNo());
 			// map 형태로 프론트엔드 전달 todoList 라는 이름(key)으로 todoList 내용(value) 전달
 			map.put("todoList", todoList);
+			log.info("신우우" + map.toString());
 		}
 		return map;
 	}
