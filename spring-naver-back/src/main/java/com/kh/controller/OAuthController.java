@@ -25,6 +25,7 @@ import jakarta.servlet.http.HttpSession;
  api가 붙도록 설정
 */
 @RestController
+@RequestMapping("/naver") //NaverRegist 와 주소충돌을 방지하기 위해 임의로 작성
 //@RequestMapping("/api")
 public class OAuthController {
 
