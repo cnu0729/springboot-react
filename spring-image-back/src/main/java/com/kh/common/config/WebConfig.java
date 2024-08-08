@@ -14,8 +14,9 @@ public class WebConfig implements WebMvcConfigurer {
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry r) {
+		// http://localhost:9007/images/ 모든 경로 허용
 		r.addResourceHandler("/images/**")
-		 .addResourceLocations("C:/Users/user1/Desktop/saveImage/"); //바탕화면에 저장된 이미지 경로
+		 .addResourceLocations("file:C:/Users/user1/Desktop/savaImage/"); //바탕화면에 저장된 이미지 경로
 	}
 	
 	@Override

@@ -1,5 +1,7 @@
 package com.kh.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.kh.dto.Post;
 import com.kh.service.PostService;
 
 @RestController
@@ -26,8 +29,10 @@ public class PostControllor {
 		return ResponseEntity.ok("이미지 DB 업로드 성공");
 	}
 	@GetMapping("/posts") // 데이터베이스에 저장된 게시글 내용 이미지 가져오기
-	public ResponseEntity<String> findAll(){
-		postService.findAll();
-		return ResponseEntity.ok("이미지 불러오기 성공");
+	public ResponseEntity<List<Post>> findAll(){ // <> 객체를 구분
+		//postService.findAll(); 
+		// -> 데이터가 무수히 많아 목록으로 가져와야하는데 리스트로 전달해주지 않으면 map ~~ react 문제 발
+		List<Post> posts = postService.findAll();
+		return ResponseEntity.ok(posts);
 	}
 }
