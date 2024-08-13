@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -9,8 +9,17 @@
 	</select>
 	
 	<insert id="insertPost" parameterType="com.kh.dto.Post">
-		<!-- posts 게시글 테이블에 title=제목, content=내용 작성 -->
-		INSERT INTO posts (title, content,image_url)
-					VALUES (#{title},#{content},#{imageUrl})
-	</insert>	
+			<!-- posts 게시글 테이블에  title = 제목 content = 내용 작성  -->
+		INSERT INTO posts (title, content,image_url) 
+		             VALUES(#{title}, #{content}, #{imageUrl})
+	</insert>
+	<update id="updatePost" parameterType="com.kh.dto.Post">
+		UPDATE posts
+		SET title = #{title}, content = #{content}, image_url=#{imageUrl}
+		WHERE id = #{id}
+	</update>
+	
 </mapper>
+
+
+

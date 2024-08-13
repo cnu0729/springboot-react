@@ -14,25 +14,38 @@ import com.kh.dto.Post;
 import com.kh.service.PostService;
 
 @RestController
-public class PostControllor {
+public class PostController {
 	
 	@Autowired
 	private PostService postService;
 	
+	
 	// 이미지 저장하기 위한 PostMapping
-	@PostMapping("/gallery/upload")
+	
+	@PostMapping("/gellery/upload")
 	// ResponseEntity = 데이터가 무사히 전달되고 있는지 체크
 	public ResponseEntity<String> uploadImages(@RequestParam("files") MultipartFile[] files,
-											   @RequestParam("title") String title,
-											   @RequestParam("content") String content){
+												@RequestParam("title") String title,
+												@RequestParam("content") String content){
 		postService.uploadImages(files, title, content);
-		return ResponseEntity.ok("이미지 DB 업로드 성공");
+		return ResponseEntity.ok("이미지 Db 업로드 성공");
 	}
-	@GetMapping("/posts") // 데이터베이스에 저장된 게시글 내용 이미지 가져오기
-	public ResponseEntity<List<Post>> findAll(){ // <> 객체를 구분
-		//postService.findAll(); 
-		// -> 데이터가 무수히 많아 목록으로 가져와야하는데 리스트로 전달해주지 않으면 map ~~ react 문제 발
+	@GetMapping("/posts") //DB에 저장된 게시글 내용 이미지 가져오기
+	public ResponseEntity<List<Post>> findAll(){ // <> 객체를 구분하는 구분괄호
+		// postService.findAll(); -> 데이터가 무수히 많아 목록으로 가져와야하는데 
+		// 리스트로 전달안해주면 map ~~ react 문제가 발생
 		List<Post> posts = postService.findAll();
 		return ResponseEntity.ok(posts);
 	}
+
 }
+
+
+
+
+
+
+
+
+
+
