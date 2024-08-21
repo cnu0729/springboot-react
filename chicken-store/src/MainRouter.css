@@ -1,0 +1,33 @@
+.app-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-origin: #f4f4f4;
+  border-radius: 10px;
+}
+
+.app-container h1{
+  text-align: center;
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.app-container .chicken-register-button{
+  display: block;
+  /* 시계방향 상 우 하 좌 */
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.app-container .chicken-register-button{
+  background-color: #218838;
+  transform: scale(1.05);
+}

@@ -1,32 +1,20 @@
-import logo from "./logo.svg";
-import "./App.css";
-import React, {useState} from "react";
+/*
+ChickenList path="/"
+
+ChickenDetail.js path="/chicken-detail"
+*/
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ChickenList from "./component/ChickenList";
-import ChickenForm from "./component/ChickenForm";
-import Modal from "./component/Modal";
-
-const App = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  // 사용자가 보고싶을 때 볼 수 있도록 처음에는 false 보이지않음 설정 해줌
-
-  // 오픈 true 닫음 false
-  // const에서 동작하는 기능이 1개일 때 {} 중괄호 생략 가능
-  const openModal = () => setIsModalOpen(true);
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  }
-
+import ChickenDetail from "./component/ChickenDetail";
+function App() {
   return (
-    <div className="App">
-      <h1>치킨 가게 메뉴 관리</h1>
-      <ChickenList />
-
-      <button onClick={openModal}>메뉴 등록하기</button>
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <ChickenForm />
-      </Modal>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ChickenList />} />
+        <Route path="/chicken-detail/:id" element={<ChickenDetail />} />
+      </Routes>
+    </Router>
   );
 }
 
