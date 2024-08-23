@@ -1,0 +1,45 @@
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+  }
+  .app-container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  /*App.js 밑에 있는 button className="chicken-register-button*/
+  .app-container .chicken-register-button {
+    display: block;
+    margin: 0 auto 20px auto; /*시계방향 상좌하우*/
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #28A745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .app-container .chicken-register-button:hover{
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+
+  .search-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
