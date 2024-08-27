@@ -1,5 +1,4 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import './App.css';
 import PizzaList from './components/PizzaList';
 import PizzaForm from './components/PizzaForm';
 import PizzaRouter from './components/PizzaRouter';

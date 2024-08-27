@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import '../css/PizzaForm.css';
 
 const PizzaForm = () => {
     const [pizzaName, setPizzaName] = useState('');
@@ -7,7 +8,7 @@ const PizzaForm = () => {
     const [price, setPrice] = useState('');
 
     const 전달데이터 = {
-        pizzaName,
+        name: pizzaName,
         description,
         price
     }
@@ -36,7 +37,7 @@ const PizzaForm = () => {
                 메뉴 가격 :
                 <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
             </label>
-            <button onClick={handleRegister}>등록하기</button>
+            <button className="pizzaform-btn" onClick={handleRegister}>등록하기</button>
         </div>
     );
 }

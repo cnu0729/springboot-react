@@ -13,18 +13,25 @@ public class PizzaService {
 	@Autowired
 	private PizzaRepository pizzaRepository;
 	
-	// 피자 메뉴 모두 보기
+	// 피자 메뉴 추가하기
+	public Kh_pizza createPizza(Kh_pizza p) {
+		return pizzaRepository.save(p);
+	}
+	// 피자 메뉴 모두보기
 	public List<Kh_pizza> getAllPizza(){
 		return pizzaRepository.findAll();
 	}
 	
-	// 피자 메뉴 추가하기
-	public Kh_pizza createPizza(Kh_pizza kh_pizza) {
-		return pizzaRepository.save(kh_pizza);
-	}
-	
-	// 파자 검색하기
-	public List<Kh_pizza> searchPizza(String query){
+	// 피자 검색하기
+	public List<Kh_pizza> searchPizza(String query) {
 		return pizzaRepository.findByNameContainingIgnoreCase(query);
 	}
 }
+
+
+
+
+
+
+
+
